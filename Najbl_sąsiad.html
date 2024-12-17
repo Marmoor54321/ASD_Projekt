@@ -1,0 +1,402 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    
+        <script>
+            L_NO_TOUCH = false;
+            L_DISABLE_3D = false;
+        </script>
+    
+    <style>html, body {width: 100%;height: 100%;margin: 0;padding: 0;}</style>
+    <style>#map {position:absolute;top:0;bottom:0;right:0;left:0;}</style>
+    <script src="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.0/css/all.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/python-visualization/folium/folium/templates/leaflet.awesome.rotate.min.css"/>
+    
+            <meta name="viewport" content="width=device-width,
+                initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+            <style>
+                #map_ee8c9282931fac99cbb37c1c3cebe890 {
+                    position: relative;
+                    width: 100.0%;
+                    height: 100.0%;
+                    left: 0.0%;
+                    top: 0.0%;
+                }
+                .leaflet-container { font-size: 1rem; }
+            </style>
+        
+</head>
+<body>
+    
+    
+            <div class="folium-map" id="map_ee8c9282931fac99cbb37c1c3cebe890" ></div>
+        
+</body>
+<script>
+    
+    
+            var map_ee8c9282931fac99cbb37c1c3cebe890 = L.map(
+                "map_ee8c9282931fac99cbb37c1c3cebe890",
+                {
+                    center: [52.26372255, 20.993854008308855],
+                    crs: L.CRS.EPSG3857,
+                    zoom: 12,
+                    zoomControl: true,
+                    preferCanvas: false,
+                }
+            );
+
+            
+
+        
+    
+            var tile_layer_6257015156a1a4091dee5107e20f1a47 = L.tileLayer(
+                "https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png",
+                {"attribution": "\u0026copy; \u003ca href=\"https://www.openstreetmap.org/copyright\"\u003eOpenStreetMap\u003c/a\u003e contributors \u0026copy; \u003ca href=\"https://carto.com/attributions\"\u003eCARTO\u003c/a\u003e", "detectRetina": false, "maxNativeZoom": 20, "maxZoom": 20, "minZoom": 0, "noWrap": false, "opacity": 1, "subdomains": "abcd", "tms": false}
+            );
+        
+    
+            tile_layer_6257015156a1a4091dee5107e20f1a47.addTo(map_ee8c9282931fac99cbb37c1c3cebe890);
+        
+    
+            var marker_9d31a8e3a75872af7d2de55251f3a20d = L.marker(
+                [52.26372255, 20.993854008308855],
+                {}
+            ).addTo(map_ee8c9282931fac99cbb37c1c3cebe890);
+        
+    
+            var icon_55ac24f69ebf7d206455dacfa7b77339 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "red", "prefix": "glyphicon"}
+            );
+            marker_9d31a8e3a75872af7d2de55251f3a20d.setIcon(icon_55ac24f69ebf7d206455dacfa7b77339);
+        
+    
+        var popup_4705537b291782542b8c7a768874971d = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_e4c556e35880b80ed346a4ac23f8c4a7 = $(`<div id="html_e4c556e35880b80ed346a4ac23f8c4a7" style="width: 100.0%; height: 100.0%;">Depot (Start/End)</div>`)[0];
+                popup_4705537b291782542b8c7a768874971d.setContent(html_e4c556e35880b80ed346a4ac23f8c4a7);
+            
+        
+
+        marker_9d31a8e3a75872af7d2de55251f3a20d.bindPopup(popup_4705537b291782542b8c7a768874971d)
+        ;
+
+        
+    
+    
+            var marker_efa3255a24b87bd6faa50962eaa78879 = L.marker(
+                [52.251520049999996, 20.989575981507272],
+                {}
+            ).addTo(map_ee8c9282931fac99cbb37c1c3cebe890);
+        
+    
+            var icon_444fd59b422e5d4ae6cdcc7f3bb6d846 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "blue", "prefix": "glyphicon"}
+            );
+            marker_efa3255a24b87bd6faa50962eaa78879.setIcon(icon_444fd59b422e5d4ae6cdcc7f3bb6d846);
+        
+    
+        var popup_3010e595440f64dd8531fffb735cc564 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_3dd5b0fcc691f577dac1d74ab1b668f4 = $(`<div id="html_3dd5b0fcc691f577dac1d74ab1b668f4" style="width: 100.0%; height: 100.0%;">1. "LAMA"-MARCIN J.STRUZIK</div>`)[0];
+                popup_3010e595440f64dd8531fffb735cc564.setContent(html_3dd5b0fcc691f577dac1d74ab1b668f4);
+            
+        
+
+        marker_efa3255a24b87bd6faa50962eaa78879.bindPopup(popup_3010e595440f64dd8531fffb735cc564)
+        ;
+
+        
+    
+    
+            var poly_line_c8b4eb9def79cb5d75f812e937d55753 = L.polyline(
+                [[52.26372255, 20.993854008308855], [52.251520049999996, 20.989575981507272]],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "blue", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 2.5}
+            ).addTo(map_ee8c9282931fac99cbb37c1c3cebe890);
+        
+    
+            var marker_a859bceb3195a5c6a2704d64d3698352 = L.marker(
+                [52.244137699999996, 20.994164755177103],
+                {}
+            ).addTo(map_ee8c9282931fac99cbb37c1c3cebe890);
+        
+    
+            var icon_60ee94ef338512fda8cb54c2f42cc8e0 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "blue", "prefix": "glyphicon"}
+            );
+            marker_a859bceb3195a5c6a2704d64d3698352.setIcon(icon_60ee94ef338512fda8cb54c2f42cc8e0);
+        
+    
+        var popup_dc88fe99e5e52e2bf7ad242b8eb16a94 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_a0a2245dbc669fbb7474ac6134bd3e91 = $(`<div id="html_a0a2245dbc669fbb7474ac6134bd3e91" style="width: 100.0%; height: 100.0%;">2. PAWEŁ TRĘBIŃSKI</div>`)[0];
+                popup_dc88fe99e5e52e2bf7ad242b8eb16a94.setContent(html_a0a2245dbc669fbb7474ac6134bd3e91);
+            
+        
+
+        marker_a859bceb3195a5c6a2704d64d3698352.bindPopup(popup_dc88fe99e5e52e2bf7ad242b8eb16a94)
+        ;
+
+        
+    
+    
+            var poly_line_37ec42d296bb89af291fbf66c7d4e012 = L.polyline(
+                [[52.251520049999996, 20.989575981507272], [52.244137699999996, 20.994164755177103]],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "blue", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 2.5}
+            ).addTo(map_ee8c9282931fac99cbb37c1c3cebe890);
+        
+    
+            var marker_e51f60e9cef77a3bd7f0043e549ca39d = L.marker(
+                [52.223408199999994, 20.95556841032618],
+                {}
+            ).addTo(map_ee8c9282931fac99cbb37c1c3cebe890);
+        
+    
+            var icon_78dec45d917edd48a470f6ef907acd9c = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "blue", "prefix": "glyphicon"}
+            );
+            marker_e51f60e9cef77a3bd7f0043e549ca39d.setIcon(icon_78dec45d917edd48a470f6ef907acd9c);
+        
+    
+        var popup_dd654edbf4f7f680c23ea93c2ec7a2ef = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_b3b219a5c6046e7439f862a2a1717470 = $(`<div id="html_b3b219a5c6046e7439f862a2a1717470" style="width: 100.0%; height: 100.0%;">3. ŁUKASZ SZOCH</div>`)[0];
+                popup_dd654edbf4f7f680c23ea93c2ec7a2ef.setContent(html_b3b219a5c6046e7439f862a2a1717470);
+            
+        
+
+        marker_e51f60e9cef77a3bd7f0043e549ca39d.bindPopup(popup_dd654edbf4f7f680c23ea93c2ec7a2ef)
+        ;
+
+        
+    
+    
+            var poly_line_90da49fa4f769aa65da87f504ab50847 = L.polyline(
+                [[52.244137699999996, 20.994164755177103], [52.223408199999994, 20.95556841032618]],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "blue", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 2.5}
+            ).addTo(map_ee8c9282931fac99cbb37c1c3cebe890);
+        
+    
+            var marker_59f8befc74cbfcd0adb8bdfec431005e = L.marker(
+                [52.172036399999996, 21.021563117920877],
+                {}
+            ).addTo(map_ee8c9282931fac99cbb37c1c3cebe890);
+        
+    
+            var icon_4451edab5461e111d928c3407f71e1a7 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "blue", "prefix": "glyphicon"}
+            );
+            marker_59f8befc74cbfcd0adb8bdfec431005e.setIcon(icon_4451edab5461e111d928c3407f71e1a7);
+        
+    
+        var popup_41ff85e432f4ed6e6037fc69fca12992 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_c2e28e347c47ed42ebfa2bc0f814a025 = $(`<div id="html_c2e28e347c47ed42ebfa2bc0f814a025" style="width: 100.0%; height: 100.0%;">4. Kancelaria Radcy Prawnego Wojciech Bobik</div>`)[0];
+                popup_41ff85e432f4ed6e6037fc69fca12992.setContent(html_c2e28e347c47ed42ebfa2bc0f814a025);
+            
+        
+
+        marker_59f8befc74cbfcd0adb8bdfec431005e.bindPopup(popup_41ff85e432f4ed6e6037fc69fca12992)
+        ;
+
+        
+    
+    
+            var poly_line_18662590239ed69bb5bd3bfa9571a30f = L.polyline(
+                [[52.223408199999994, 20.95556841032618], [52.172036399999996, 21.021563117920877]],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "blue", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 2.5}
+            ).addTo(map_ee8c9282931fac99cbb37c1c3cebe890);
+        
+    
+            var marker_0d48928d1a62e3488eee56f49f8f827b = L.marker(
+                [52.1134651, 21.019504051336217],
+                {}
+            ).addTo(map_ee8c9282931fac99cbb37c1c3cebe890);
+        
+    
+            var icon_5e557296a484eeacaf3f610baf70106a = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "blue", "prefix": "glyphicon"}
+            );
+            marker_0d48928d1a62e3488eee56f49f8f827b.setIcon(icon_5e557296a484eeacaf3f610baf70106a);
+        
+    
+        var popup_db8c348c2c45d0b40abe409b5f8dd262 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_02a566d7a4a462faef4a8287069a7949 = $(`<div id="html_02a566d7a4a462faef4a8287069a7949" style="width: 100.0%; height: 100.0%;">5. ELŻBIETA BRODZIK LOKUM - wspólnik spółki cywilnej</div>`)[0];
+                popup_db8c348c2c45d0b40abe409b5f8dd262.setContent(html_02a566d7a4a462faef4a8287069a7949);
+            
+        
+
+        marker_0d48928d1a62e3488eee56f49f8f827b.bindPopup(popup_db8c348c2c45d0b40abe409b5f8dd262)
+        ;
+
+        
+    
+    
+            var poly_line_969060bfb0aecd926f3edab665751eef = L.polyline(
+                [[52.172036399999996, 21.021563117920877], [52.1134651, 21.019504051336217]],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "blue", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 2.5}
+            ).addTo(map_ee8c9282931fac99cbb37c1c3cebe890);
+        
+    
+            var marker_97f0121ba38ad5ca28ce701f38208570 = L.marker(
+                [52.15908995, 21.21556705],
+                {}
+            ).addTo(map_ee8c9282931fac99cbb37c1c3cebe890);
+        
+    
+            var icon_8f9ec92e8c5040f794e52f799adecf2b = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "blue", "prefix": "glyphicon"}
+            );
+            marker_97f0121ba38ad5ca28ce701f38208570.setIcon(icon_8f9ec92e8c5040f794e52f799adecf2b);
+        
+    
+        var popup_14fa9e3d0710d497fc6e95c38ef64f5e = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_7e5ed8c478d706c6050d5439f7c2397e = $(`<div id="html_7e5ed8c478d706c6050d5439f7c2397e" style="width: 100.0%; height: 100.0%;">6. Po Dietę Nelly Grabiec</div>`)[0];
+                popup_14fa9e3d0710d497fc6e95c38ef64f5e.setContent(html_7e5ed8c478d706c6050d5439f7c2397e);
+            
+        
+
+        marker_97f0121ba38ad5ca28ce701f38208570.bindPopup(popup_14fa9e3d0710d497fc6e95c38ef64f5e)
+        ;
+
+        
+    
+    
+            var poly_line_cbfd69eec08ed61b03e3191ecf5363ce = L.polyline(
+                [[52.1134651, 21.019504051336217], [52.15908995, 21.21556705]],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "blue", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 2.5}
+            ).addTo(map_ee8c9282931fac99cbb37c1c3cebe890);
+        
+    
+            var marker_4731914fecbe8ff57dbd4690c9f0926f = L.marker(
+                [52.2404324, 21.120141646840388],
+                {}
+            ).addTo(map_ee8c9282931fac99cbb37c1c3cebe890);
+        
+    
+            var icon_e1247b0e65df3621d285303f5137a62b = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "blue", "prefix": "glyphicon"}
+            );
+            marker_4731914fecbe8ff57dbd4690c9f0926f.setIcon(icon_e1247b0e65df3621d285303f5137a62b);
+        
+    
+        var popup_6af501286e2f08beed6d3908a0a0a227 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_4c18ddd5e2c20448d6e4d4a9cfe7582d = $(`<div id="html_4c18ddd5e2c20448d6e4d4a9cfe7582d" style="width: 100.0%; height: 100.0%;">7. Jerzy Stańczuk VERDE JERZY STAŃCZUK</div>`)[0];
+                popup_6af501286e2f08beed6d3908a0a0a227.setContent(html_4c18ddd5e2c20448d6e4d4a9cfe7582d);
+            
+        
+
+        marker_4731914fecbe8ff57dbd4690c9f0926f.bindPopup(popup_6af501286e2f08beed6d3908a0a0a227)
+        ;
+
+        
+    
+    
+            var poly_line_e101e153ac5eadc05631feafc63672f9 = L.polyline(
+                [[52.15908995, 21.21556705], [52.2404324, 21.120141646840388]],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "blue", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 2.5}
+            ).addTo(map_ee8c9282931fac99cbb37c1c3cebe890);
+        
+    
+            var marker_72e7346d1cb085449411a2eb1d2046f9 = L.marker(
+                [52.2415873, 21.1018836],
+                {}
+            ).addTo(map_ee8c9282931fac99cbb37c1c3cebe890);
+        
+    
+            var icon_a648bdeaea9937310cc960d68dcf600b = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "blue", "prefix": "glyphicon"}
+            );
+            marker_72e7346d1cb085449411a2eb1d2046f9.setIcon(icon_a648bdeaea9937310cc960d68dcf600b);
+        
+    
+        var popup_cc340a27fc5a77b41ae6b037e7909e00 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_2e66a098c06a8af15f7e280ed61c5e32 = $(`<div id="html_2e66a098c06a8af15f7e280ed61c5e32" style="width: 100.0%; height: 100.0%;">8. Małgorzata Stankowska</div>`)[0];
+                popup_cc340a27fc5a77b41ae6b037e7909e00.setContent(html_2e66a098c06a8af15f7e280ed61c5e32);
+            
+        
+
+        marker_72e7346d1cb085449411a2eb1d2046f9.bindPopup(popup_cc340a27fc5a77b41ae6b037e7909e00)
+        ;
+
+        
+    
+    
+            var poly_line_fb820adb3bc7b77351fa9542a3c61681 = L.polyline(
+                [[52.2404324, 21.120141646840388], [52.2415873, 21.1018836]],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "blue", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 2.5}
+            ).addTo(map_ee8c9282931fac99cbb37c1c3cebe890);
+        
+    
+            var marker_78a1dbea41db9500709a0fd4b424ef7d = L.marker(
+                [52.2429697, 21.085992216585247],
+                {}
+            ).addTo(map_ee8c9282931fac99cbb37c1c3cebe890);
+        
+    
+            var icon_97fca42e19e8a83b27779f6194e11549 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "blue", "prefix": "glyphicon"}
+            );
+            marker_78a1dbea41db9500709a0fd4b424ef7d.setIcon(icon_97fca42e19e8a83b27779f6194e11549);
+        
+    
+        var popup_bdaee69a1be178cb3e2b22d92c0de85c = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_1c1b7e0964b02c8ece586fb2e8bcf2cd = $(`<div id="html_1c1b7e0964b02c8ece586fb2e8bcf2cd" style="width: 100.0%; height: 100.0%;">9. Sprzedaż detaliczna Grażyna Małuj</div>`)[0];
+                popup_bdaee69a1be178cb3e2b22d92c0de85c.setContent(html_1c1b7e0964b02c8ece586fb2e8bcf2cd);
+            
+        
+
+        marker_78a1dbea41db9500709a0fd4b424ef7d.bindPopup(popup_bdaee69a1be178cb3e2b22d92c0de85c)
+        ;
+
+        
+    
+    
+            var poly_line_9c7fb5943239607e83544a96ba0c6293 = L.polyline(
+                [[52.2415873, 21.1018836], [52.2429697, 21.085992216585247]],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "blue", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 2.5}
+            ).addTo(map_ee8c9282931fac99cbb37c1c3cebe890);
+        
+    
+            var poly_line_d71e7bff7f35f1ecef8f977cc579c41c = L.polyline(
+                [[52.2429697, 21.085992216585247], [52.26372255, 20.993854008308855]],
+                {"bubblingMouseEvents": true, "color": "green", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "green", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 2.5}
+            ).addTo(map_ee8c9282931fac99cbb37c1c3cebe890);
+        
+</script>
+</html>

@@ -1,0 +1,759 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    
+        <script>
+            L_NO_TOUCH = false;
+            L_DISABLE_3D = false;
+        </script>
+    
+    <style>html, body {width: 100%;height: 100%;margin: 0;padding: 0;}</style>
+    <style>#map {position:absolute;top:0;bottom:0;right:0;left:0;}</style>
+    <script src="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.0/css/all.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/python-visualization/folium/folium/templates/leaflet.awesome.rotate.min.css"/>
+    
+            <meta name="viewport" content="width=device-width,
+                initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+            <style>
+                #map_e9890387a7e3e2dd46f277442453cf0b {
+                    position: relative;
+                    width: 100.0%;
+                    height: 100.0%;
+                    left: 0.0%;
+                    top: 0.0%;
+                }
+                .leaflet-container { font-size: 1rem; }
+            </style>
+        
+</head>
+<body>
+    
+    
+            <div class="folium-map" id="map_e9890387a7e3e2dd46f277442453cf0b" ></div>
+        
+</body>
+<script>
+    
+    
+            var map_e9890387a7e3e2dd46f277442453cf0b = L.map(
+                "map_e9890387a7e3e2dd46f277442453cf0b",
+                {
+                    center: [52.26372255, 20.993854008308855],
+                    crs: L.CRS.EPSG3857,
+                    zoom: 13,
+                    zoomControl: true,
+                    preferCanvas: false,
+                }
+            );
+
+            
+
+        
+    
+            var tile_layer_7609f31ca0b73aa18779586ef2c9fdb7 = L.tileLayer(
+                "https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png",
+                {"attribution": "\u0026copy; \u003ca href=\"https://www.openstreetmap.org/copyright\"\u003eOpenStreetMap\u003c/a\u003e contributors \u0026copy; \u003ca href=\"https://carto.com/attributions\"\u003eCARTO\u003c/a\u003e", "detectRetina": false, "maxNativeZoom": 20, "maxZoom": 20, "minZoom": 0, "noWrap": false, "opacity": 1, "subdomains": "abcd", "tms": false}
+            );
+        
+    
+            tile_layer_7609f31ca0b73aa18779586ef2c9fdb7.addTo(map_e9890387a7e3e2dd46f277442453cf0b);
+        
+    
+            var marker_078ed090911b3e01970b7e31b6757624 = L.marker(
+                [52.26372255, 20.993854008308855],
+                {}
+            ).addTo(map_e9890387a7e3e2dd46f277442453cf0b);
+        
+    
+            var icon_6eb92f2b03b8ab58e6a3ee084421c400 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "red", "prefix": "glyphicon"}
+            );
+            marker_078ed090911b3e01970b7e31b6757624.setIcon(icon_6eb92f2b03b8ab58e6a3ee084421c400);
+        
+    
+        var popup_74e7f91c430bd0670bccc06ab7305490 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_1fd502d94cad7d6c16fd5379e35c277e = $(`<div id="html_1fd502d94cad7d6c16fd5379e35c277e" style="width: 100.0%; height: 100.0%;">Depot</div>`)[0];
+                popup_74e7f91c430bd0670bccc06ab7305490.setContent(html_1fd502d94cad7d6c16fd5379e35c277e);
+            
+        
+
+        marker_078ed090911b3e01970b7e31b6757624.bindPopup(popup_74e7f91c430bd0670bccc06ab7305490)
+        ;
+
+        
+    
+    
+            var marker_a63a23908035ce90079ed8f4443061aa = L.marker(
+                [52.273333550000004, 21.03789590721421],
+                {}
+            ).addTo(map_e9890387a7e3e2dd46f277442453cf0b);
+        
+    
+            var icon_a529c3d132bb4a733d9079b57d814d93 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "blue", "prefix": "glyphicon"}
+            );
+            marker_a63a23908035ce90079ed8f4443061aa.setIcon(icon_a529c3d132bb4a733d9079b57d814d93);
+        
+    
+        var popup_d43d52a75f98633fcc6729c0dae40a04 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_75e69d4a7f693472981b32080f661c29 = $(`<div id="html_75e69d4a7f693472981b32080f661c29" style="width: 100.0%; height: 100.0%;">JACEK WACHOWICZ J.W. REM-BUD (3.18 km)</div>`)[0];
+                popup_d43d52a75f98633fcc6729c0dae40a04.setContent(html_75e69d4a7f693472981b32080f661c29);
+            
+        
+
+        marker_a63a23908035ce90079ed8f4443061aa.bindPopup(popup_d43d52a75f98633fcc6729c0dae40a04)
+        ;
+
+        
+    
+    
+            var poly_line_feb134040c4f60a2310c81b28a0815af = L.polyline(
+                [[52.26372255, 20.993854008308855], [52.273333550000004, 21.03789590721421]],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "blue", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 3}
+            ).addTo(map_e9890387a7e3e2dd46f277442453cf0b);
+        
+    
+            var marker_66c77dc5067391322d2ca8d08fb7048e = L.marker(
+                [52.27822865, 20.947477894825944],
+                {}
+            ).addTo(map_e9890387a7e3e2dd46f277442453cf0b);
+        
+    
+            var icon_ad6d2da580edf81572c25c2d686397b2 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "green", "prefix": "glyphicon"}
+            );
+            marker_66c77dc5067391322d2ca8d08fb7048e.setIcon(icon_ad6d2da580edf81572c25c2d686397b2);
+        
+    
+        var popup_256f5879b7e475dfd20e1fb30482ef90 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_03ea18c136427f90264955983d11bd0e = $(`<div id="html_03ea18c136427f90264955983d11bd0e" style="width: 100.0%; height: 100.0%;">JMF Jakub Fila (3.54 km)</div>`)[0];
+                popup_256f5879b7e475dfd20e1fb30482ef90.setContent(html_03ea18c136427f90264955983d11bd0e);
+            
+        
+
+        marker_66c77dc5067391322d2ca8d08fb7048e.bindPopup(popup_256f5879b7e475dfd20e1fb30482ef90)
+        ;
+
+        
+    
+    
+            var poly_line_d80fea6bc69f4e0366acde35d57af4eb = L.polyline(
+                [[52.26372255, 20.993854008308855], [52.27822865, 20.947477894825944]],
+                {"bubblingMouseEvents": true, "color": "green", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "green", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 3}
+            ).addTo(map_e9890387a7e3e2dd46f277442453cf0b);
+        
+    
+            var marker_e0b006f80c3653cb355141604501afcf = L.marker(
+                [52.27695285, 21.068525533220722],
+                {}
+            ).addTo(map_e9890387a7e3e2dd46f277442453cf0b);
+        
+    
+            var icon_a4c3195163b731a0b6f5ad206947e57c = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "purple", "prefix": "glyphicon"}
+            );
+            marker_e0b006f80c3653cb355141604501afcf.setIcon(icon_a4c3195163b731a0b6f5ad206947e57c);
+        
+    
+        var popup_4b7d164b2565b5af40adfc17442f993e = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_a3566cd9834ee6148569acd01fb1f491 = $(`<div id="html_a3566cd9834ee6148569acd01fb1f491" style="width: 100.0%; height: 100.0%;">AIR Robert Bieliński - Wspólnik spółki cywilnej; Robert Bieliński (5.29 km)</div>`)[0];
+                popup_4b7d164b2565b5af40adfc17442f993e.setContent(html_a3566cd9834ee6148569acd01fb1f491);
+            
+        
+
+        marker_e0b006f80c3653cb355141604501afcf.bindPopup(popup_4b7d164b2565b5af40adfc17442f993e)
+        ;
+
+        
+    
+    
+            var poly_line_3ebe1d10be053d2c7cbae3c0a981f1f0 = L.polyline(
+                [[52.26372255, 20.993854008308855], [52.27695285, 21.068525533220722]],
+                {"bubblingMouseEvents": true, "color": "purple", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "purple", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 3}
+            ).addTo(map_e9890387a7e3e2dd46f277442453cf0b);
+        
+    
+            var marker_e8fb63f35e207c23d8f6e8f1c23e26b8 = L.marker(
+                [52.2126221, 20.9731209],
+                {}
+            ).addTo(map_e9890387a7e3e2dd46f277442453cf0b);
+        
+    
+            var icon_bdc955967be49bbf8269b33df0676f5c = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "orange", "prefix": "glyphicon"}
+            );
+            marker_e8fb63f35e207c23d8f6e8f1c23e26b8.setIcon(icon_bdc955967be49bbf8269b33df0676f5c);
+        
+    
+        var popup_5ae43f6e093fe6a8489e2102981b546f = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_6386700b297976965d6eaa1495360c33 = $(`<div id="html_6386700b297976965d6eaa1495360c33" style="width: 100.0%; height: 100.0%;">KIERUNEK ZDROWIE KATARZYNA HOROSZ-PIOTROWSKA  (5.85 km)</div>`)[0];
+                popup_5ae43f6e093fe6a8489e2102981b546f.setContent(html_6386700b297976965d6eaa1495360c33);
+            
+        
+
+        marker_e8fb63f35e207c23d8f6e8f1c23e26b8.bindPopup(popup_5ae43f6e093fe6a8489e2102981b546f)
+        ;
+
+        
+    
+    
+            var poly_line_273cd2a95ce497637e7c9fbfe524a0f6 = L.polyline(
+                [[52.26372255, 20.993854008308855], [52.2126221, 20.9731209]],
+                {"bubblingMouseEvents": true, "color": "orange", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "orange", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 3}
+            ).addTo(map_e9890387a7e3e2dd46f277442453cf0b);
+        
+    
+            var marker_c42bc1a5537821cffcac713e28b2917a = L.marker(
+                [52.28314895, 21.076360668305583],
+                {}
+            ).addTo(map_e9890387a7e3e2dd46f277442453cf0b);
+        
+    
+            var icon_ff766f74f38334792b4cbd2b73cead50 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "darkred", "prefix": "glyphicon"}
+            );
+            marker_c42bc1a5537821cffcac713e28b2917a.setIcon(icon_ff766f74f38334792b4cbd2b73cead50);
+        
+    
+        var popup_c69161617befeb0cf3bdc34049dadcd9 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_10d1195665bd5ae288cd07cf1be9e5a1 = $(`<div id="html_10d1195665bd5ae288cd07cf1be9e5a1" style="width: 100.0%; height: 100.0%;">Krzysztof Karasiński Auto Karaś (6.01 km)</div>`)[0];
+                popup_c69161617befeb0cf3bdc34049dadcd9.setContent(html_10d1195665bd5ae288cd07cf1be9e5a1);
+            
+        
+
+        marker_c42bc1a5537821cffcac713e28b2917a.bindPopup(popup_c69161617befeb0cf3bdc34049dadcd9)
+        ;
+
+        
+    
+    
+            var poly_line_cd3b303b8158c3cea30f7cc22de85e02 = L.polyline(
+                [[52.26372255, 20.993854008308855], [52.28314895, 21.076360668305583]],
+                {"bubblingMouseEvents": true, "color": "darkred", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "darkred", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 3}
+            ).addTo(map_e9890387a7e3e2dd46f277442453cf0b);
+        
+    
+            var marker_261e20d3e99a0db9fd44619e0f2f8d8e = L.marker(
+                [52.2429697, 21.085992216585247],
+                {}
+            ).addTo(map_e9890387a7e3e2dd46f277442453cf0b);
+        
+    
+            var icon_36c522c033009fdbcb45b1f0f72e0f51 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "lightred", "prefix": "glyphicon"}
+            );
+            marker_261e20d3e99a0db9fd44619e0f2f8d8e.setIcon(icon_36c522c033009fdbcb45b1f0f72e0f51);
+        
+    
+        var popup_f1cb638c0fc7196361f47e36b4bc1004 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_b91463e4212b696b2052d92ba6beabb8 = $(`<div id="html_b91463e4212b696b2052d92ba6beabb8" style="width: 100.0%; height: 100.0%;">Sprzedaż detaliczna Grażyna Małuj (6.68 km)</div>`)[0];
+                popup_f1cb638c0fc7196361f47e36b4bc1004.setContent(html_b91463e4212b696b2052d92ba6beabb8);
+            
+        
+
+        marker_261e20d3e99a0db9fd44619e0f2f8d8e.bindPopup(popup_f1cb638c0fc7196361f47e36b4bc1004)
+        ;
+
+        
+    
+    
+            var poly_line_648add94ea85a94126ae09c8fd90ed66 = L.polyline(
+                [[52.26372255, 20.993854008308855], [52.2429697, 21.085992216585247]],
+                {"bubblingMouseEvents": true, "color": "lightred", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "lightred", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 3}
+            ).addTo(map_e9890387a7e3e2dd46f277442453cf0b);
+        
+    
+            var marker_9c4fbb47e6ee538f3e7519b5e397849f = L.marker(
+                [52.1904405, 20.98930011264237],
+                {}
+            ).addTo(map_e9890387a7e3e2dd46f277442453cf0b);
+        
+    
+            var icon_009b5de9cffeaf40aa09c483ab33ae75 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "beige", "prefix": "glyphicon"}
+            );
+            marker_9c4fbb47e6ee538f3e7519b5e397849f.setIcon(icon_009b5de9cffeaf40aa09c483ab33ae75);
+        
+    
+        var popup_673ca0c15c6a38d6cb9c1d2ac271a7b7 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_240093b1ebeaac546bb249bc4a722604 = $(`<div id="html_240093b1ebeaac546bb249bc4a722604" style="width: 100.0%; height: 100.0%;">1/Bożenna Jarosz Kancelaria Doradcza Notka S.C. B.Jarosz&M.Żukowska 2/Bożenna Jarosz Notka (8.15 km)</div>`)[0];
+                popup_673ca0c15c6a38d6cb9c1d2ac271a7b7.setContent(html_240093b1ebeaac546bb249bc4a722604);
+            
+        
+
+        marker_9c4fbb47e6ee538f3e7519b5e397849f.bindPopup(popup_673ca0c15c6a38d6cb9c1d2ac271a7b7)
+        ;
+
+        
+    
+    
+            var poly_line_0bd4e3ecf524731763bbd525e3980af4 = L.polyline(
+                [[52.26372255, 20.993854008308855], [52.1904405, 20.98930011264237]],
+                {"bubblingMouseEvents": true, "color": "beige", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "beige", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 3}
+            ).addTo(map_e9890387a7e3e2dd46f277442453cf0b);
+        
+    
+            var marker_b9cdd1b26e9215cb2683a08a9f24c2b8 = L.marker(
+                [52.34084105, 20.98024248043407],
+                {}
+            ).addTo(map_e9890387a7e3e2dd46f277442453cf0b);
+        
+    
+            var icon_c05edfc637e4a03683837d37382d1a68 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "darkblue", "prefix": "glyphicon"}
+            );
+            marker_b9cdd1b26e9215cb2683a08a9f24c2b8.setIcon(icon_c05edfc637e4a03683837d37382d1a68);
+        
+    
+        var popup_0811f3b00fe4dbbfd304e781373cc4a0 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_64f384b0eff4eff402952314c2c4fa62 = $(`<div id="html_64f384b0eff4eff402952314c2c4fa62" style="width: 100.0%; height: 100.0%;">TOMASZ MEUŚ NO PROBLEM (8.62 km)</div>`)[0];
+                popup_0811f3b00fe4dbbfd304e781373cc4a0.setContent(html_64f384b0eff4eff402952314c2c4fa62);
+            
+        
+
+        marker_b9cdd1b26e9215cb2683a08a9f24c2b8.bindPopup(popup_0811f3b00fe4dbbfd304e781373cc4a0)
+        ;
+
+        
+    
+    
+            var poly_line_9a848d27a29fc7aa2abcb0b2825430fa = L.polyline(
+                [[52.26372255, 20.993854008308855], [52.34084105, 20.98024248043407]],
+                {"bubblingMouseEvents": true, "color": "darkblue", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "darkblue", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 3}
+            ).addTo(map_e9890387a7e3e2dd46f277442453cf0b);
+        
+    
+            var marker_1c6c7be6444401346902aaac6241d83f = L.marker(
+                [52.34656235, 21.022725319219653],
+                {}
+            ).addTo(map_e9890387a7e3e2dd46f277442453cf0b);
+        
+    
+            var icon_8a200be10d2522795d38edce94dd59cb = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "darkgreen", "prefix": "glyphicon"}
+            );
+            marker_1c6c7be6444401346902aaac6241d83f.setIcon(icon_8a200be10d2522795d38edce94dd59cb);
+        
+    
+        var popup_c9b6d8ee236176de086f0db2491b4901 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_dec73dc304f0f29c39fd548399188c1b = $(`<div id="html_dec73dc304f0f29c39fd548399188c1b" style="width: 100.0%; height: 100.0%;">ŁUKASZ BOCHENEK BS (9.42 km)</div>`)[0];
+                popup_c9b6d8ee236176de086f0db2491b4901.setContent(html_dec73dc304f0f29c39fd548399188c1b);
+            
+        
+
+        marker_1c6c7be6444401346902aaac6241d83f.bindPopup(popup_c9b6d8ee236176de086f0db2491b4901)
+        ;
+
+        
+    
+    
+            var poly_line_c4106dc3aae1db834b5af40dff84278a = L.polyline(
+                [[52.26372255, 20.993854008308855], [52.34656235, 21.022725319219653]],
+                {"bubblingMouseEvents": true, "color": "darkgreen", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "darkgreen", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 3}
+            ).addTo(map_e9890387a7e3e2dd46f277442453cf0b);
+        
+    
+            var marker_b26f71c23dc5baf7d2873ef97e24176b = L.marker(
+                [52.217857249999994, 21.11251619449636],
+                {}
+            ).addTo(map_e9890387a7e3e2dd46f277442453cf0b);
+        
+    
+            var icon_ff0ae6ecae701756dd8c6aa4cad99df4 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "cadetblue", "prefix": "glyphicon"}
+            );
+            marker_b26f71c23dc5baf7d2873ef97e24176b.setIcon(icon_ff0ae6ecae701756dd8c6aa4cad99df4);
+        
+    
+        var popup_ab8e760bc47ef9bee99a82e1d5d89ba6 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_63943a267affffcb294c23108ee7868c = $(`<div id="html_63943a267affffcb294c23108ee7868c" style="width: 100.0%; height: 100.0%;">Consultnet Zbigniew Gołębiewski (9.55 km)</div>`)[0];
+                popup_ab8e760bc47ef9bee99a82e1d5d89ba6.setContent(html_63943a267affffcb294c23108ee7868c);
+            
+        
+
+        marker_b26f71c23dc5baf7d2873ef97e24176b.bindPopup(popup_ab8e760bc47ef9bee99a82e1d5d89ba6)
+        ;
+
+        
+    
+    
+            var poly_line_a49ea4fb8edace25eec1b2850d67f275 = L.polyline(
+                [[52.26372255, 20.993854008308855], [52.217857249999994, 21.11251619449636]],
+                {"bubblingMouseEvents": true, "color": "cadetblue", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "cadetblue", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 3}
+            ).addTo(map_e9890387a7e3e2dd46f277442453cf0b);
+        
+    
+            var marker_663fbc9050183638740ef61ae6c28368 = L.marker(
+                [52.1861388, 20.928891771907217],
+                {}
+            ).addTo(map_e9890387a7e3e2dd46f277442453cf0b);
+        
+    
+            var icon_89798054a60d8541b78e6eed027ffdf2 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "darkpurple", "prefix": "glyphicon"}
+            );
+            marker_663fbc9050183638740ef61ae6c28368.setIcon(icon_89798054a60d8541b78e6eed027ffdf2);
+        
+    
+        var popup_54731f9a083205bda2ff529161907804 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_e7c573377869b4296524720dac9cee0d = $(`<div id="html_e7c573377869b4296524720dac9cee0d" style="width: 100.0%; height: 100.0%;">ADWOKAT DOMINIKA WOJTYSIAK KANCELARIA ADWOKACKA (9.70 km)</div>`)[0];
+                popup_54731f9a083205bda2ff529161907804.setContent(html_e7c573377869b4296524720dac9cee0d);
+            
+        
+
+        marker_663fbc9050183638740ef61ae6c28368.bindPopup(popup_54731f9a083205bda2ff529161907804)
+        ;
+
+        
+    
+    
+            var poly_line_7499ef2aa058d4e70b3eb9e05526df95 = L.polyline(
+                [[52.26372255, 20.993854008308855], [52.1861388, 20.928891771907217]],
+                {"bubblingMouseEvents": true, "color": "darkpurple", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "darkpurple", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 3}
+            ).addTo(map_e9890387a7e3e2dd46f277442453cf0b);
+        
+    
+            var marker_38e1b43701704ae6fecc3c3ce1f964e5 = L.marker(
+                [52.1839827, 21.063849767137153],
+                {}
+            ).addTo(map_e9890387a7e3e2dd46f277442453cf0b);
+        
+    
+            var icon_f9bc5bc6583fd3cd9f45c5facd0f1a99 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "pink", "prefix": "glyphicon"}
+            );
+            marker_38e1b43701704ae6fecc3c3ce1f964e5.setIcon(icon_f9bc5bc6583fd3cd9f45c5facd0f1a99);
+        
+    
+        var popup_fef908c6d2bbd78bf44b8be069887949 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_3e3c2dbfcb0b5c701a05bbc66e57661b = $(`<div id="html_3e3c2dbfcb0b5c701a05bbc66e57661b" style="width: 100.0%; height: 100.0%;">ZUZANNA DEMBOWSKA-SMYK "LANGUAGE CAFE" (10.07 km)</div>`)[0];
+                popup_fef908c6d2bbd78bf44b8be069887949.setContent(html_3e3c2dbfcb0b5c701a05bbc66e57661b);
+            
+        
+
+        marker_38e1b43701704ae6fecc3c3ce1f964e5.bindPopup(popup_fef908c6d2bbd78bf44b8be069887949)
+        ;
+
+        
+    
+    
+            var poly_line_2d48c8d3d585ee7bf5ed448a676955ef = L.polyline(
+                [[52.26372255, 20.993854008308855], [52.1839827, 21.063849767137153]],
+                {"bubblingMouseEvents": true, "color": "pink", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "pink", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 3}
+            ).addTo(map_e9890387a7e3e2dd46f277442453cf0b);
+        
+    
+            var marker_c1decf0a1d61caa9ae7225eb21392845 = L.marker(
+                [52.1667422, 21.01238399591559],
+                {}
+            ).addTo(map_e9890387a7e3e2dd46f277442453cf0b);
+        
+    
+            var icon_6e4f54ff9483d0305b68669854c76f7d = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "lightblue", "prefix": "glyphicon"}
+            );
+            marker_c1decf0a1d61caa9ae7225eb21392845.setIcon(icon_6e4f54ff9483d0305b68669854c76f7d);
+        
+    
+        var popup_60cd4daf6f8dc6af463628bd46a04e37 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_a5ca02d3b69019b2267781f57a339452 = $(`<div id="html_a5ca02d3b69019b2267781f57a339452" style="width: 100.0%; height: 100.0%;">Danuta Gudzowaty DG INVEST (10.86 km)</div>`)[0];
+                popup_60cd4daf6f8dc6af463628bd46a04e37.setContent(html_a5ca02d3b69019b2267781f57a339452);
+            
+        
+
+        marker_c1decf0a1d61caa9ae7225eb21392845.bindPopup(popup_60cd4daf6f8dc6af463628bd46a04e37)
+        ;
+
+        
+    
+    
+            var poly_line_6e2c89847b767e3fd037cdbabfec624d = L.polyline(
+                [[52.26372255, 20.993854008308855], [52.1667422, 21.01238399591559]],
+                {"bubblingMouseEvents": true, "color": "lightblue", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "lightblue", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 3}
+            ).addTo(map_e9890387a7e3e2dd46f277442453cf0b);
+        
+    
+            var marker_09045050e2384eac28a9bacc614b9b49 = L.marker(
+                [52.2033371, 20.85853770953357],
+                {}
+            ).addTo(map_e9890387a7e3e2dd46f277442453cf0b);
+        
+    
+            var icon_7c208e05597a9785f9b64059985d0867 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "lightgreen", "prefix": "glyphicon"}
+            );
+            marker_09045050e2384eac28a9bacc614b9b49.setIcon(icon_7c208e05597a9785f9b64059985d0867);
+        
+    
+        var popup_dad9eff62ac8dd6d123087688208a247 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_b28d4631b429d4faae8eed6a18c9a678 = $(`<div id="html_b28d4631b429d4faae8eed6a18c9a678" style="width: 100.0%; height: 100.0%;">Creative Images Kamil Grzelak (11.40 km)</div>`)[0];
+                popup_dad9eff62ac8dd6d123087688208a247.setContent(html_b28d4631b429d4faae8eed6a18c9a678);
+            
+        
+
+        marker_09045050e2384eac28a9bacc614b9b49.bindPopup(popup_dad9eff62ac8dd6d123087688208a247)
+        ;
+
+        
+    
+    
+            var poly_line_ea7ca1fd0c75efe65872e837073b1838 = L.polyline(
+                [[52.26372255, 20.993854008308855], [52.2033371, 20.85853770953357]],
+                {"bubblingMouseEvents": true, "color": "lightgreen", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "lightgreen", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 3}
+            ).addTo(map_e9890387a7e3e2dd46f277442453cf0b);
+        
+    
+            var marker_d4f21cc4f21119e7b9e39f6860d2bef8 = L.marker(
+                [52.17486475, 21.084569501472153],
+                {}
+            ).addTo(map_e9890387a7e3e2dd46f277442453cf0b);
+        
+    
+            var icon_1c0ca199efa2e932ab328c36c3b67c64 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "gray", "prefix": "glyphicon"}
+            );
+            marker_d4f21cc4f21119e7b9e39f6860d2bef8.setIcon(icon_1c0ca199efa2e932ab328c36c3b67c64);
+        
+    
+        var popup_bf32124b2d632041b19b92952d8a3c2f = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_da3b45aea6eaf47a8199c1a3285af9fd = $(`<div id="html_da3b45aea6eaf47a8199c1a3285af9fd" style="width: 100.0%; height: 100.0%;">Maple Tree Montessori Katarzyna Hudź-Skoczek (11.65 km)</div>`)[0];
+                popup_bf32124b2d632041b19b92952d8a3c2f.setContent(html_da3b45aea6eaf47a8199c1a3285af9fd);
+            
+        
+
+        marker_d4f21cc4f21119e7b9e39f6860d2bef8.bindPopup(popup_bf32124b2d632041b19b92952d8a3c2f)
+        ;
+
+        
+    
+    
+            var poly_line_b4b5322f1708180e20c8049545a4a2e0 = L.polyline(
+                [[52.26372255, 20.993854008308855], [52.17486475, 21.084569501472153]],
+                {"bubblingMouseEvents": true, "color": "gray", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "gray", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 3}
+            ).addTo(map_e9890387a7e3e2dd46f277442453cf0b);
+        
+    
+            var marker_2a581e2ffccbb254e7ad814386ca049f = L.marker(
+                [52.2038473, 21.13450621154721],
+                {}
+            ).addTo(map_e9890387a7e3e2dd46f277442453cf0b);
+        
+    
+            var icon_8b0d518da7a8155fcb577d64c24dad2a = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "black", "prefix": "glyphicon"}
+            );
+            marker_2a581e2ffccbb254e7ad814386ca049f.setIcon(icon_8b0d518da7a8155fcb577d64c24dad2a);
+        
+    
+        var popup_b3c34206ac00e71ad3d612084a005f36 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_3defe97cbc687801a990fd1673a45b16 = $(`<div id="html_3defe97cbc687801a990fd1673a45b16" style="width: 100.0%; height: 100.0%;">KLM  MARCIN BOGUT (11.67 km)</div>`)[0];
+                popup_b3c34206ac00e71ad3d612084a005f36.setContent(html_3defe97cbc687801a990fd1673a45b16);
+            
+        
+
+        marker_2a581e2ffccbb254e7ad814386ca049f.bindPopup(popup_b3c34206ac00e71ad3d612084a005f36)
+        ;
+
+        
+    
+    
+            var poly_line_26ae4f1359e82e5814f82a1572f04d37 = L.polyline(
+                [[52.26372255, 20.993854008308855], [52.2038473, 21.13450621154721]],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "black", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 3}
+            ).addTo(map_e9890387a7e3e2dd46f277442453cf0b);
+        
+    
+            var marker_e984ce832a601156b95b04897de0ae19 = L.marker(
+                [52.196384050000006, 21.16555040709359],
+                {}
+            ).addTo(map_e9890387a7e3e2dd46f277442453cf0b);
+        
+    
+            var icon_94e1bb33d604849b1a6ed58aa1cdfa1c = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "lightgray", "prefix": "glyphicon"}
+            );
+            marker_e984ce832a601156b95b04897de0ae19.setIcon(icon_94e1bb33d604849b1a6ed58aa1cdfa1c);
+        
+    
+        var popup_b6907ec2bc783fbbd6ea736ea00c2416 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_e2f2499e9c65737009640b75f863fd6c = $(`<div id="html_e2f2499e9c65737009640b75f863fd6c" style="width: 100.0%; height: 100.0%;">Jan Prusakiewicz (13.89 km)</div>`)[0];
+                popup_b6907ec2bc783fbbd6ea736ea00c2416.setContent(html_e2f2499e9c65737009640b75f863fd6c);
+            
+        
+
+        marker_e984ce832a601156b95b04897de0ae19.bindPopup(popup_b6907ec2bc783fbbd6ea736ea00c2416)
+        ;
+
+        
+    
+    
+            var poly_line_1d7cfe6f8b533d36090260e0dc534c23 = L.polyline(
+                [[52.26372255, 20.993854008308855], [52.196384050000006, 21.16555040709359]],
+                {"bubblingMouseEvents": true, "color": "lightgray", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "lightgray", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 3}
+            ).addTo(map_e9890387a7e3e2dd46f277442453cf0b);
+        
+    
+            var marker_ce77416a1d540de7b45ef17f71519ce6 = L.marker(
+                [52.207461300000006, 21.188388412710683],
+                {}
+            ).addTo(map_e9890387a7e3e2dd46f277442453cf0b);
+        
+    
+            var icon_424606d5eabfc1df06c9818cb8b110a2 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "blue", "prefix": "glyphicon"}
+            );
+            marker_ce77416a1d540de7b45ef17f71519ce6.setIcon(icon_424606d5eabfc1df06c9818cb8b110a2);
+        
+    
+        var popup_9de7f3dc935d069c8251ee5be803631b = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_b306d4916b05341b1298e9c56aa35e64 = $(`<div id="html_b306d4916b05341b1298e9c56aa35e64" style="width: 100.0%; height: 100.0%;">Joanna Adelson (14.65 km)</div>`)[0];
+                popup_9de7f3dc935d069c8251ee5be803631b.setContent(html_b306d4916b05341b1298e9c56aa35e64);
+            
+        
+
+        marker_ce77416a1d540de7b45ef17f71519ce6.bindPopup(popup_9de7f3dc935d069c8251ee5be803631b)
+        ;
+
+        
+    
+    
+            var poly_line_efd517dd47883d37ff5f080c8946a42a = L.polyline(
+                [[52.26372255, 20.993854008308855], [52.207461300000006, 21.188388412710683]],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "blue", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 3}
+            ).addTo(map_e9890387a7e3e2dd46f277442453cf0b);
+        
+    
+            var marker_c0f1b763618e1b7ad0bae7696c7d48f5 = L.marker(
+                [52.183409999999995, 21.18788487740634],
+                {}
+            ).addTo(map_e9890387a7e3e2dd46f277442453cf0b);
+        
+    
+            var icon_033f6a0dce03fc1e31cf4fb2be6fb6cd = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "green", "prefix": "glyphicon"}
+            );
+            marker_c0f1b763618e1b7ad0bae7696c7d48f5.setIcon(icon_033f6a0dce03fc1e31cf4fb2be6fb6cd);
+        
+    
+        var popup_bf88d9b038b70483269c18555d5dadb8 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_7ae56b0dc66d35b9c4963d694d065ea6 = $(`<div id="html_7ae56b0dc66d35b9c4963d694d065ea6" style="width: 100.0%; height: 100.0%;">Barbara Boda-Leśniak (15.95 km)</div>`)[0];
+                popup_bf88d9b038b70483269c18555d5dadb8.setContent(html_7ae56b0dc66d35b9c4963d694d065ea6);
+            
+        
+
+        marker_c0f1b763618e1b7ad0bae7696c7d48f5.bindPopup(popup_bf88d9b038b70483269c18555d5dadb8)
+        ;
+
+        
+    
+    
+            var poly_line_2362d25333e3aeb77295e2005effdf6b = L.polyline(
+                [[52.26372255, 20.993854008308855], [52.183409999999995, 21.18788487740634]],
+                {"bubblingMouseEvents": true, "color": "green", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "green", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 3}
+            ).addTo(map_e9890387a7e3e2dd46f277442453cf0b);
+        
+    
+            var marker_a02bb807efd1fbb706c096118320248c = L.marker(
+                [52.1683131, 21.23577042386878],
+                {}
+            ).addTo(map_e9890387a7e3e2dd46f277442453cf0b);
+        
+    
+            var icon_24f904975e774372f943d488e80b4d1e = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "purple", "prefix": "glyphicon"}
+            );
+            marker_a02bb807efd1fbb706c096118320248c.setIcon(icon_24f904975e774372f943d488e80b4d1e);
+        
+    
+        var popup_b3d31dc765cf24d7c301dd4f040db440 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_ff72fa2444f48375f49ef250685c6d52 = $(`<div id="html_ff72fa2444f48375f49ef250685c6d52" style="width: 100.0%; height: 100.0%;">Grzegorz Pyzel (19.60 km)</div>`)[0];
+                popup_b3d31dc765cf24d7c301dd4f040db440.setContent(html_ff72fa2444f48375f49ef250685c6d52);
+            
+        
+
+        marker_a02bb807efd1fbb706c096118320248c.bindPopup(popup_b3d31dc765cf24d7c301dd4f040db440)
+        ;
+
+        
+    
+    
+            var poly_line_9a6e2e432e7de400f041d4386f9b191c = L.polyline(
+                [[52.26372255, 20.993854008308855], [52.1683131, 21.23577042386878]],
+                {"bubblingMouseEvents": true, "color": "purple", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "purple", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 3}
+            ).addTo(map_e9890387a7e3e2dd46f277442453cf0b);
+        
+</script>
+</html>
