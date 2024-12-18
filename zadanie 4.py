@@ -145,9 +145,9 @@ def display_tsp_route_on_map(locations, route, total_distance, file_name):
     m.save(file_name)
     print(f"Map saved to {file_name}")
 
-
+random.seed(63)
 companies = load_data('Warszawa.csv')
-k = 40
+k = 50
 random_companies = random.sample(companies, k)
 random_companies.insert(0, {'latitude': 52.2296756, 'longitude': 21.0122287, 'name': 'Depot'})  # Add depot
 
