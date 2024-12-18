@@ -248,7 +248,7 @@ def nearest_neighbor(companies, depot_lat, depot_lon):
 
 
 
-k = 9
+k =100
 
 random_companies = random.sample(companies, k)
 
@@ -259,23 +259,64 @@ if depot_lat is None or depot_lon is None:
     quit()
 
 
-best_distance, best_route = brute_force(random_companies, depot_lat, depot_lon)
-
-
-print(f"Najkrótsza trasa: {best_distance:.2f} km")
-print("Kolejność odwiedzin miast:")
-for lat, lon, name in best_route:
-    print(f"{name} ({lat}, {lon})")
-print(f"Powrót do depotu ({depot_lat}, {depot_lon})")
-
-display_tsp_route_on_map(depot_lat, depot_lon, best_route, "Brute_force.html")
-
-print("\n")
+# best_distance, best_route = brute_force(random_companies, depot_lat, depot_lon)
+#
+#
+# print(f"Najkrótsza trasa: {best_distance:.2f} km")
+# print("Kolejność odwiedzin miast:")
+# for lat, lon, name in best_route:
+#     print(f"{name} ({lat}, {lon})")
+# print(f"Powrót do depotu ({depot_lat}, {depot_lon})")
+#
+# display_tsp_route_on_map(depot_lat, depot_lon, best_route, "Brute_force.html")
+#
+# print("\n")
 
 best_distance, best_route = nearest_neighbor(random_companies, depot_lat, depot_lon)
 print(f"Najkrótsza trasa (Może): {best_distance:.2f} km")
 print("Kolejność odwiedzin miast:")
-for lat, lon, name in best_route:
-    print(f"{name} ({lat}, {lon})")
+# for lat, lon, name in best_route:
+#     print(f"{name} ({lat}, {lon})")
 
 display_tsp_route_on_map(depot_lat, depot_lon, best_route, "Najbl_sąsiad.html")
+
+def repeated_nearest_neighbor(companies, depot_lat, depot_lon, iterations=10):
+    best_total_distance = float('inf')
+    best_route = []
+
+    for _ in range(iterations):
+        unvisited = [(company['latitude'], company['longitude'], company['name']) for company in companies]
+        current_company = random.choice(unvisited)
+        current_lat, current_lon = current_company[0], current_company[1]
+        route = [current_company]
+        unvisited.remove(current_company)
+        total_distance = haversine(depot_lat, depot_lon, current_lat, current_lon)
+
+        while unvisited:
+            nearest = min(unvisited, key=lambda city: haversine(current_lat, current_lon, city[0], city[1]))
+            unvisited.remove(nearest)
+            route.append(nearest)
+            total_distance += haversine(current_lat, current_lon, nearest[0], nearest[1])
+            current_lat, current_lon = nearest[0], nearest[1]
+
+        total_distance += haversine(current_lat, current_lon, depot_lat, depot_lon)
+
+        if total_distance < best_total_distance:
+            best_total_distance = total_distance
+            best_route = route
+
+    return best_total_distance, best_route
+
+# Przykładowe użycie:
+iterations = 10  # Liczba iteracji do wykonania
+best_distance, best_route = repeated_nearest_neighbor(random_companies, depot_lat, depot_lon, iterations)
+
+print(f"Najkrótsza trasa (po {iterations} iteracjach): {best_distance:.2f} km")
+print("Kolejność odwiedzin miast:")
+# for lat, lon, name in best_route:
+#     print(f"{name} ({lat}, {lon})")
+
+display_tsp_route_on_map(depot_lat, depot_lon, best_route, "Powtarzalny_Najbl_sąsiad.html")
+
+
+
