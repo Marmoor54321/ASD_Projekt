@@ -154,19 +154,19 @@ random_companies.insert(0, {'latitude': 52.2296756, 'longitude': 21.0122287, 'na
 distance_matrix = get_distance_matrix(random_companies)
 
 
-start_time = time.time()
-rnn_distance, rnn_route = repeated_nearest_neighbor(random_companies, 0, distance_matrix)
-rnn_time = time.time() - start_time
-
-# Run Christofides Algorithm
 # start_time = time.time()
-# chr_distance, chr_route = christofides_algorithm(distance_matrix)
-# chr_time = time.time() - start_time
+# rnn_distance, rnn_route = repeated_nearest_neighbor(random_companies, 0, distance_matrix)
+# rnn_time = time.time() - start_time
+
+
+start_time = time.time()
+chr_distance, chr_route = christofides_algorithm(distance_matrix)
+chr_time = time.time() - start_time
 
 # Display results
 # print(f"Repeated Nearest Neighbor: Distance = {rnn_distance:.5f} km, Time = {rnn_time:.2f} seconds")
-# print(f"Christofides: Distance = {chr_distance:.5f} km, Time = {chr_time:.2f} seconds")
+print(f"Christofides: Distance = {chr_distance:.5f} km, Time = {chr_time:.2f} seconds")
 
 # Visualize routes
-display_tsp_route_on_map(random_companies, rnn_route, rnn_distance, "rnn_route.html")
-#display_tsp_route_on_map(random_companies, chr_route, chr_distance, "chr_route.html")
+#display_tsp_route_on_map(random_companies, rnn_route, rnn_distance, "rnn_route.html")
+display_tsp_route_on_map(random_companies, chr_route, chr_distance, "chr_route.html")
