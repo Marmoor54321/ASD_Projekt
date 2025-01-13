@@ -3,10 +3,9 @@ import csv
 import random
 import openrouteservice as ors
 import folium
-from itertools import permutations
-import networkx as nx
 import os
 import json
+import math
 
 # OpenRouteService client
 client = ors.Client(key='5b3ce3597851110001cf624890e6125065a644b4ad5fa0e2a05d158e')
@@ -18,32 +17,25 @@ cache_file = "distance_cache.json"
 if os.path.exists(cache_file):
     with open(cache_file, "r") as f:
         distance_cache = json.load(f)
-        # Convert keys back to tuples after loading
         distance_cache = {tuple(eval(key)): value for key, value in distance_cache.items()}
 else:
     distance_cache = {}
 
-
 def save_cache():
-    """Save the distance cache to a file."""
-    # Convert tuple keys to strings for JSON compatibility
     json_cache = {str(key): value for key, value in distance_cache.items()}
     with open(cache_file, "w") as f:
         json.dump(json_cache, f)
 
-
 def get_distance(client, coord1, coord2):
-    """Get the distance between two coordinates, using the cache if possible."""
-    key = tuple(sorted([coord1, coord2]))  # Symmetric key
+    key = tuple(sorted([coord1, coord2]))
     if key in distance_cache:
         return distance_cache[key]
     else:
         route = client.directions(coordinates=[coord1, coord2], profile='driving-car', format='geojson')
-        distance = route['features'][0]['properties']['segments'][0]['distance'] / 1000.0  # in km
+        distance = route['features'][0]['properties']['segments'][0]['distance'] / 1000.0
         distance_cache[key] = distance
-        save_cache()  # Save updated cache
+        save_cache()
         return distance
-
 
 def load_data(file_path):
     companies = []
@@ -55,9 +47,7 @@ def load_data(file_path):
             companies.append(row)
     return companies
 
-
 def generate_distance_matrix(locations):
-    """Generate a symmetric distance matrix for the given locations."""
     n = len(locations)
     matrix = [[0] * n for _ in range(n)]
     for i in range(n):
@@ -68,11 +58,9 @@ def generate_distance_matrix(locations):
             matrix[i][j] = matrix[j][i] = distance
     return matrix
 
-
-def repeated_nearest_neighbor(companies, depot_index, distance_matrix, iterations=10):
+def repeated_nearest_neighbor(companies, depot_index, distance_matrix, iterations=5):
     best_total_distance = float('inf')
     best_route = []
-
     for _ in range(iterations):
         unvisited = list(range(len(companies)))
         current_index = depot_index
@@ -80,7 +68,6 @@ def repeated_nearest_neighbor(companies, depot_index, distance_matrix, iteration
         total_distance = 0
 
         unvisited.remove(current_index)
-
         while unvisited:
             nearest = min(unvisited, key=lambda i: distance_matrix[current_index][i])
             total_distance += distance_matrix[current_index][nearest]
@@ -89,50 +76,44 @@ def repeated_nearest_neighbor(companies, depot_index, distance_matrix, iteration
             unvisited.remove(current_index)
 
         total_distance += distance_matrix[current_index][depot_index]
-
         if total_distance < best_total_distance:
             best_total_distance = total_distance
             best_route = route
 
     return best_total_distance, best_route
 
+def simulated_annealing(distance_matrix, depot_index, initial_temp=10000, cooling_rate=0.9995, stopping_temp=1e-8):
+    def calculate_total_distance(route):
+        total = sum(distance_matrix[route[i]][route[i + 1]] for i in range(len(route) - 1))
+        total += distance_matrix[route[-1]][route[0]]
+        return total
 
-def christofides_algorithm(distance_matrix):
     n = len(distance_matrix)
-    graph = nx.Graph()
-    for i in range(n):
-        for j in range(i + 1, n):
-            graph.add_edge(i, j, weight=distance_matrix[i][j])
+    current_route = list(range(n))
+    current_distance = calculate_total_distance(current_route)
+    temperature = initial_temp
+    best_route = current_route[:]
+    best_distance = current_distance
 
-    mst = nx.minimum_spanning_tree(graph)
+    while temperature > stopping_temp:
+        new_route = current_route[:]
+        a, b = random.sample(range(1, n), 2)
+        new_route[a], new_route[b] = new_route[b], new_route[a]
 
-    odd_degree_nodes = [node for node in mst.nodes if mst.degree[node] % 2 == 1]
+        new_distance = calculate_total_distance(new_route)
+        delta_distance = new_distance - current_distance
 
-    odd_subgraph = graph.subgraph(odd_degree_nodes)
+        if delta_distance < 0 or random.random() < math.exp(-delta_distance / temperature):
+            current_route = new_route
+            current_distance = new_distance
 
-    matching = nx.algorithms.matching.min_weight_matching(odd_subgraph, weight="weight")
+            if new_distance < best_distance:
+                best_distance = new_distance
+                best_route = new_route[:]
 
-    multigraph = nx.MultiGraph(mst)
-    for u, v in matching:
-        multigraph.add_edge(u, v, weight=graph[u][v]['weight'])
+        temperature *= cooling_rate
 
-    eulerian_circuit = list(nx.eulerian_circuit(multigraph))
-
-    visited = set()
-    hamiltonian_path = []
-    total_distance = 0
-    for u, v in eulerian_circuit:
-        if u not in visited:
-            hamiltonian_path.append(u)
-            visited.add(u)
-            if len(hamiltonian_path) > 1:
-                total_distance += graph[hamiltonian_path[-2]][hamiltonian_path[-1]]['weight']
-
-    total_distance += graph[hamiltonian_path[-1]][hamiltonian_path[0]]['weight']
-    hamiltonian_path.append(hamiltonian_path[0])
-
-    return total_distance, hamiltonian_path
-
+    return best_distance, best_route
 
 def display_tsp_route_on_map(locations, route, total_distance, file_name):
     m = folium.Map(location=[locations[0]['latitude'], locations[0]['longitude']], tiles="cartodbpositron", zoom_start=12)
@@ -153,25 +134,8 @@ def display_tsp_route_on_map(locations, route, total_distance, file_name):
             icon=folium.Icon(color="blue")
         ).add_to(m)
 
-        coords = [(start['longitude'], start['latitude']), (end['longitude'], end['latitude'])]
-        route_geo = client.directions(coordinates=coords, profile='driving-car', format='geojson')
-
-        folium.PolyLine(
-            locations=[list(reversed(coord)) for coord in route_geo['features'][0]['geometry']['coordinates']],
-            color="blue",
-            weight=2.5
-        ).add_to(m)
-
-    folium.PolyLine(
-        locations=[[locations[route[-2]]['latitude'], locations[route[-2]]['longitude']],
-                   [locations[route[0]]['latitude'], locations[route[0]]['longitude']]],
-        color="green",
-        weight=2.5
-    ).add_to(m)
-
     m.save(file_name)
     print(f"Map saved to {file_name}")
-
 
 # Main execution
 random.seed(5323)
@@ -186,12 +150,12 @@ start_time = time.time()
 rnn_distance, rnn_route = repeated_nearest_neighbor(random_companies, 0, distance_matrix)
 rnn_time = time.time() - start_time
 
-# start_time = time.time()
-# chr_distance, chr_route = christofides_algorithm(distance_matrix)
-# chr_time = time.time() - start_time
+start_time = time.time()
+sa_distance, sa_route = simulated_annealing(distance_matrix, 0)
+sa_time = time.time() - start_time
 
 print(f"Repeated Nearest Neighbor: Distance = {rnn_distance:.5f} km, Time = {rnn_time:.5f} seconds")
-#print(f"Christofides: Distance = {chr_distance:.5f} km, Time = {chr_time:.2f} seconds")
+print(f"Simulated Annealing: Distance = {sa_distance:.5f} km, Time = {sa_time:.5f} seconds")
 
-display_tsp_route_on_map(random_companies, rnn_route, rnn_distance, "Najbl_sasiad++_route.html")
-#display_tsp_route_on_map(random_companies, chr_route, chr_distance, "christofides.html")
+display_tsp_route_on_map(random_companies, rnn_route, rnn_distance, "rnn_route.html")
+display_tsp_route_on_map(random_companies, sa_route, sa_distance, "sa_route.html")
