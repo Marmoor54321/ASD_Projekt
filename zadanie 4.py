@@ -7,13 +7,13 @@ import os
 import json
 import math
 
-# OpenRouteService client
+
 client = ors.Client(key='5b3ce3597851110001cf624890e6125065a644b4ad5fa0e2a05d158e')
 
-# Cache file for distances
+
 cache_file = "distance_cache.json"
 
-# Load cache
+
 if os.path.exists(cache_file):
     with open(cache_file, "r") as f:
         distance_cache = json.load(f)
@@ -137,7 +137,7 @@ def display_tsp_route_on_map(locations, route, total_distance, file_name):
     m.save(file_name)
     print(f"Map saved to {file_name}")
 
-# Main execution
+
 random.seed(5323)
 companies = load_data('Warszawa.csv')
 k = 40
